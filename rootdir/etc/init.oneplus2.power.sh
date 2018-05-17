@@ -33,7 +33,7 @@ restorecon -R /sys/devices/system/cpu
 
 # ensure at most one A57 is online when thermal hotplug is disabled
 write /sys/devices/system/cpu/cpu4/online 1
-write /sys/devices/system/cpu/cpu5/online 0
+write /sys/devices/system/cpu/cpu5/online 1
 write /sys/devices/system/cpu/cpu6/online 0
 write /sys/devices/system/cpu/cpu7/online 0
 
@@ -41,9 +41,6 @@ write /sys/devices/system/cpu/cpu7/online 0
 # These files receive the default label "sysfs".
 # Restorecon again to give new files the correct label.
 restorecon -R /sys/devices/system/cpu
-
-# Best effort limiting for first time boot if msm_performance module is absent
-write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 1248000
 
 # some files in /sysmodule/msm_performance/parameters are created after the restorecon of
 # /sys/. These files receive the default label "sysfs".
@@ -66,44 +63,23 @@ write /sys/module/lpm_levels/system/a57/a57-l2-retention/idle_enabled 1
 # configure governor settings for little cluster
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
 restorecon -R /sys/devices/system/cpu # must restore after interactive
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 0
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 99
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 0
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/powersave_bias 0
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "85 600000:45 672000:50 768000:55 864000:60 960000:70 1248000:85 1478400:95"
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 80000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 60000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 30000
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 302400
+write /sys/devices/system/cpu/cpu0/cpufreq/interactive/screen_off_maxfreq 0
 
 # configure governor settings for big cluster
 write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
 restorecon -R /sys/devices/system/cpu # must restore after interactive
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay "30000 1248000:60000 1728000:30000"
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 99
- write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 30000
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1248000
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 1
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/powersave_bias 1
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "90 1248000:95"
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 30000
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 80000
 write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 302400
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 30000
 
 # restore A57's max
 copy /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
 
 # Configure core_ctl module parameters
 write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
-write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 1
-write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 50
+write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
+write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 55
 write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 30
 write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms  100
 write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
@@ -130,7 +106,7 @@ write /sys/devices/system/cpu/cpu7/online 1
 # Setting B.L scheduler parameters
 write /proc/sys/kernel/sched_migration_fixup 1
 write /proc/sys/kernel/sched_small_task 30
-write /proc/sys/kernel/sched_upmigrate 90
+write /proc/sys/kernel/sched_upmigrate 95
 write /proc/sys/kernel/sched_downmigrate 80
 write /proc/sys/kernel/sched_upmigrate_min_nice 8
 write /proc/sys/kernel/sched_freq_inc_notify 400000
@@ -158,9 +134,8 @@ write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 8
 write /sys/module/adreno_idler/parameters/adreno_idler_active 1
 write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 20
 write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 15 
-write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 3500
+write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 4000
 write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 27000000
-write /sys/class/kgsl/kgsl-3d0/max_gpuclk 510000000
 
 
 write /sys/module/cpu_boost/parameters/input_boost_enabled 0
