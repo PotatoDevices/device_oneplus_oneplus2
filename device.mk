@@ -276,6 +276,9 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.recovery.oneplus2.rc \
     init.zram.sh \
+    init.oneplus2.topapp.sh \
+    init.spectrum.rc \
+    init.spectrum.sh \
     ueventd.qcom.rc
 
 # RenderScript HAL

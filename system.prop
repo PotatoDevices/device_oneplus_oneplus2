@@ -172,3 +172,8 @@ ro.HOME_APP_ADJ = 1
 ro.config.hw_quickpoweron=true
 ro.ril.power_collapse=1
 pm.sleep_mode=1
+
+# Spectrum Support
+spectrum.support=1
+persist.spectrum.kernel=BlueBolt
+persist.spectrum.profile=0
