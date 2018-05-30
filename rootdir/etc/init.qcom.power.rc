@@ -81,4 +81,8 @@ on property:sys.boot_completed=1
     write /sys/modules/snd_soc_wcd9330/parameters/uhqa_mode_pdesireaudio 1
     setprop audio.offload.buffer.size.kb 1024
     
+    # Undervolt 
+    write /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table "750 825 825 840 850 855 885 910 990 1020 1055 1075 780 780 780 780 820 850 875 925 940 960 975 990"
+
+
     exec - root root system -- /system/bin/init.oneplus2.topapp.sh
