@@ -30,14 +30,20 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>5</item>
-        <item>40</item>
+        <item>1</item>
+        <item>6</item>
+        <item>10</item>
+        <item>50</item>
         <item>100</item>
-        <item>325</item>
-        <item>600</item>
-        <item>1250</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+        <item>700</item>
+        <item>1000</item>
         <item>2200</item>
-        <item>4000</item>
         <item>10000</item>
     </integer-array>
 
@@ -46,15 +52,21 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>11</item>
-        <item>22</item>
-        <item>47</item>
-        <item>61</item>
-        <item>84</item>
-        <item>107</item>
-        <item>154</item>
-        <item>212</item>
-        <item>245</item>
+        <item>5</item>
+        <item>8</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+        <item>110</item>
+        <item>120</item>
+        <item>140</item>
+        <item>160</item>
+        <item>200</item>
         <item>255</item>
     </integer-array>
 
