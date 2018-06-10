@@ -4,9 +4,9 @@
     "target_path": "device/oppo/common"
   },
   {
-    "repository" : "AOSiP-devices/kernel_oneplus_msm8994",
+    "repository" : "ShreyanshLodha/BlueBolt-OnePlus-2",
     "target_path": "kernel/oneplus/msm8994",
-    "branch"     : "oreo-mr1"
+    "branch"     : "new-oreo"
   },
   {
     "repository" : "AOSiP-devices/vendor_oneplus_oneplus2",
