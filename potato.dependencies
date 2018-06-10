@@ -5,14 +5,12 @@
   },
   {
     "repository" : "AOSiP-devices/kernel_oneplus_msm8994",
-    "target_path": "kernel/oneplus/msm8994"
+    "target_path": "kernel/oneplus/msm8994",
     "branch"     : "oreo-mr1"
-
   },
   {
     "repository" : "AOSiP-devices/vendor_oneplus_oneplus2",
-    "target_path": "vendor/oneplus/oneplus2"
+    "target_path": "vendor/oneplus/oneplus2",
     "branch"     : "oreo-mr1"
-
   }
 ]
