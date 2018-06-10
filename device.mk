@@ -130,6 +130,10 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     services-ext
 
+# Charger
+PRODUCT_PACKAGES += \
+	charger_res_images
+
 # DRM
 PRODUCT_PACKAGES += \
 	android.hardware.drm@1.0-impl
