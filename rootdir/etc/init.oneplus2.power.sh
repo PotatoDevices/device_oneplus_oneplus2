@@ -31,7 +31,7 @@ get-set-forall /sys/devices/soc.0/qcom,bcl.*/mode enable
 # /sys/. These files receive the default label "sysfs".
 restorecon -R /sys/devices/system/cpu
 
-# ensure at most one A57 is online when thermal hotplug is disabled
+# ensure A57 is online when thermal hotplug is disabled
 write /sys/devices/system/cpu/cpu4/online 1
 write /sys/devices/system/cpu/cpu5/online 1
 write /sys/devices/system/cpu/cpu6/online 0
@@ -78,14 +78,14 @@ copy /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq /sys/devices/system/c
 
 # Configure core_ctl module parameters
 write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
-write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 0
+write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
 write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 50
 write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 30
 write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms  100
 write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
 write /sys/devices/system/cpu/cpu4/core_ctl/not_preferred 0
 write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
-write /sys/devices/system/cpu/cpu4/core_ctl/always_online_cpu "0 0 0 0"
+write /sys/devices/system/cpu/cpu4/core_ctl/always_online_cpu "1 1 0 0"
 write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
 write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 4
 write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 20
@@ -112,7 +112,7 @@ write /proc/sys/kernel/sched_upmigrate_min_nice 8
 write /proc/sys/kernel/sched_freq_inc_notify 400000
 write /proc/sys/kernel/sched_freq_dec_notify 400000
 write /sys/devices/system/cpu/cpu0/sched_mostly_idle_freq 960000
-write /sys/devices/system/cpu/cpu0/sched_mostly_idle_load 25
+write /sys/devices/system/cpu/cpu0/sched_mostly_idle_load 30
 write /sys/devices/system/cpu/cpu0/sched_mostly_idle_nr_run 6
 
 # Enable rps static configuration
@@ -132,12 +132,9 @@ write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
 write /sys/class/kgsl/kgsl-3d0/max_pwrlevel 1
 write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 8
 write /sys/module/adreno_idler/parameters/adreno_idler_active 1
-write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 20
-write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 15
-write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 3500
 write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 27000000
 
-
+# Disable input boost
 write /sys/module/cpu_boost/parameters/input_boost_enabled 0
 
 # re-enable thermal and BCL hotplug
