@@ -20,6 +20,8 @@ package org.lineageos.settings.doze;
 import android.content.Context;
 import android.content.Intent;
 import android.os.UserHandle;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.provider.Settings;
 import android.util.Log;
 import androidx.preference.PreferenceManager;
@@ -98,5 +100,14 @@ public final class Utils {
     protected static boolean sensorsEnabled(Context context) {
         return isPickUpEnabled(context) || isHandwaveGestureEnabled(context)
                 || isPocketGestureEnabled(context);
+    }
+
+    protected static Sensor getSensor(SensorManager sm, String type) {
+        for (Sensor sensor : sm.getSensorList(Sensor.TYPE_ALL)) {
+            if (type.equals(sensor.getStringType())) {
+                return sensor;
+            }
+        }
+        return null;
     }
 }
