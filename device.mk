@@ -188,12 +188,9 @@ PRODUCT_PACKAGES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    telephony-ext \
+    ims_ext_common.xml \
     libshims_ims \
     libshims_boringssl
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
 
 # IRQ Balance
 PRODUCT_COPY_FILES += \
@@ -252,6 +249,15 @@ PRODUCT_PACKAGES += \
 # Privapp Whitelist
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml
+
+# Telephony
+PRODUCT_PACKAGES += \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # Ramdisk
 PRODUCT_PACKAGES += \
