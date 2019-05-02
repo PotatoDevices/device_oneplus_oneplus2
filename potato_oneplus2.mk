@@ -24,7 +24,7 @@ $(call inherit-product, device/oneplus/oneplus2/device.mk)
 $(call inherit-product, vendor/potato/config/common_full_phone.mk)
 
 PRODUCT_NAME := potato_oneplus2
-PRODUCT_DEVICE := OnePlus2
+PRODUCT_DEVICE := oneplus2
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
 
