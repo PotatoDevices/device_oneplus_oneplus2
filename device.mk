@@ -200,7 +200,7 @@ PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@1.0-service-legacymm
 
 # Launcher
-# LAWNCHAIR_OPTOUT := true
+LAWNCHAIR_OPTOUT := true
 
 # Media
 PRODUCT_COPY_FILES += \
