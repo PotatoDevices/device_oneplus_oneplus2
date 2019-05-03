@@ -65,7 +65,7 @@ write /sys/module/lpm_levels/parameters/sleep_disabled 0
 # configure governor settings for little cluster
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
 restorecon -R /sys/devices/system/cpu # must restore after interactive
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/powersave_bias 0
+write /sys/devices/system/cpu/cpu0/cpufreq/interactive/powersave_bias 1
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/screen_off_maxfreq 0
 
@@ -132,18 +132,6 @@ get-set-forall /sys/class/devfreq/qcom,cpubw*/bw_hwmon/io_percent 20
 get-set-forall /sys/class/devfreq/qcom,cpubw*/bw_hwmon/guard_band_mbps 30
 restorecon -R /sys/class/devfreq/qcom,cpubw*
 get-set-forall  /sys/class/devfreq/qcom,mincpubw.*/governor cpufreq
-
-# Disable sched_boost
-write /proc/sys/kernel/sched_boost 0
-
-# set GPU default governor to msm-adreno-tz
-write /sys/class/devfreq/fdb00000.qcom,kgsl-3d0/governor msm-adreno-tz
-write /sys/class/kgsl/kgsl-3d0/max_pwrlevel 0
-write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 7
-write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 27000000
-
-# Disable input boost
-write /sys/module/cpu_boost/parameters/input_boost_enabled 0
 
 # re-enable thermal and BCL hotplug
 write /sys/module/msm_thermal/core_control/enabled 1
