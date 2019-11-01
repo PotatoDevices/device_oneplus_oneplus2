@@ -123,6 +123,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
 
+# Charging offline
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
@@ -197,9 +201,9 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.oneplus2
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-legacymm \
-    vendor.lineage.livedisplay@2.0-service-sysfs
+# PRODUCT_PACKAGES += \
+#    vendor.lineage.livedisplay@2.0-service-legacymm \
+#    vendor.lineage.livedisplay@2.0-service-sysfs
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -275,12 +279,12 @@ PRODUCT_PACKAGES += \
     tinyplay
 
 # Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.oneplus2
+# PRODUCT_PACKAGES += \
+#    vendor.lineage.touch@1.0-service.oneplus2
 
 # Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
+# PRODUCT_PACKAGES += \
+#    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
