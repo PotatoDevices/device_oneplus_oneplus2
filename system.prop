@@ -143,3 +143,12 @@ ro.lineage.build.vendor_security_patch=2017-10-01
 
 # Wifi
 persist.data.iwlan.enable=true
+
+# IMS
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=0
+persist.dbg.wfc_avail_ovr=0
+persist.ims.disableADBLogs=1
+persist.ims.disableDebugLogs=1
+persist.ims.disableIMSLogs=1
+persist.ims.disableQXDMLogs=1
