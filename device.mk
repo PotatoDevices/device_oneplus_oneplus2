@@ -315,3 +315,7 @@ PRODUCT_COPY_FILES += \
 
 # Inherit from oppo-common
 $(call inherit-product, device/oppo/common/common.mk)
+
+PRODUCT_BOARD_PLATFORM := msm8994
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
