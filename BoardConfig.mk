@@ -22,7 +22,7 @@
 #
 
 # Inherit from oppo-common
-# -include device/oppo/common/BoardConfigCommon.mk
+-include device/oppo/common/BoardConfigCommon.mk
 
 TARGET_OTA_ASSERT_DEVICE := OnePlus2,oneplus2
 
@@ -66,7 +66,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8994
-TARGET_KERNEL_CONFIG := bluebolt_defconfig
+TARGET_KERNEL_CONFIG := oneplus2_defconfig
 
 # Audio
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true

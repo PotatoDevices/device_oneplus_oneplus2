@@ -4,9 +4,9 @@
     "target_path": "device/oppo/common"
   },
   {
-    "repository": "ShreyanshLodha/BlueBolt-OnePlus-2",
+    "repository": "LineageOS/android_kernel_oneplus_msm8994",
     "target_path": "kernel/oneplus/msm8994",
-    "branch": "pie-new"
+    "branch": "lineage-17.1"
   },
   {
     "repository": "vendor_oneplus_oneplus2",

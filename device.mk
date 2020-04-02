@@ -61,6 +61,10 @@ TARGET_BOOTANIMATION_HALF_RES := true
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Dexpreopt Package(s)
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI
+
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
@@ -118,7 +122,7 @@ PRODUCT_PACKAGES += \
     camera.msm8994 \
     libshim_atomic \
     sensors.hal.tof \
-    Snap
+    Camera2
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
@@ -151,8 +155,8 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 # Doze mode
-# PRODUCT_PACKAGES += \
-#     OneplusDoze
+PRODUCT_PACKAGES += \
+    OneplusDoze
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
@@ -317,7 +321,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_SYSTEM)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Inherit from oppo-common
-# $(call inherit-product, device/oppo/common/common.mk)
+$(call inherit-product, device/oppo/common/common.mk)
 
 PRODUCT_BOARD_PLATFORM := msm8994
 PRODUCT_USES_QCOM_HARDWARE := true

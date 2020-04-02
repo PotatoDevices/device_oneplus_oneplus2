@@ -54,7 +54,7 @@ ro.data.large_tcp_window_size=true
 
 # Dex2oat limits
 dalvik.vm.boot-dex2oat-threads=4
-dalvik.vm.dex2oat-threads=2
+dalvik.vm.dex2oat-threads=4
 dalvik.vm.image-dex2oat-threads=4
 
 # Graphics
@@ -70,7 +70,7 @@ persist.mdpcomp_perfhint=50
 persist.metadata_dynfps.disable=true
 ro.opengles.version=196610
 ro.qualcomm.cabl=0
-ro.sf.lcd_density=480
+ro.sf.lcd_density=420
 
 # OEM Unlocking
 ro.oem_unlock_supported=1
