@@ -151,8 +151,8 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
+# PRODUCT_PACKAGES += \
+#     OneplusDoze
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
@@ -170,6 +170,9 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl
+
+#IPA
+USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
 
 PRODUCT_PACKAGES += \
     gps.msm8994 \
