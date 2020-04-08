@@ -188,7 +188,11 @@ PRODUCT_PACKAGES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
+    telephony-ext
     libshims_ims
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # IRQ Balance
 PRODUCT_COPY_FILES += \
