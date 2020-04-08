@@ -140,3 +140,6 @@ persist.timed.enable=true
 
 # Vendor security patch level
 ro.lineage.build.vendor_security_patch=2017-10-01
+
+# Wifi
+persist.data.iwlan.enable=true
