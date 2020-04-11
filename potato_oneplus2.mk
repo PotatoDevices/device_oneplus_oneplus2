@@ -24,6 +24,7 @@ $(call inherit-product, device/oneplus/oneplus2/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/potato/config/common_full_phone.mk)
 
+PRODUCT_ARCH := arm64
 PRODUCT_NAME := potato_oneplus2
 PRODUCT_DEVICE := oneplus2
 PRODUCT_MANUFACTURER := OnePlus
@@ -37,3 +38,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 BUILD_FINGERPRINT := "OnePlus/OnePlus2/OnePlus2:6.0.1/MMB29M/1447858500:user/release-keys"
 
 TARGET_VENDOR := oneplus
+
+# Boot animation
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_BOOTANIM_LOW_RES := true
