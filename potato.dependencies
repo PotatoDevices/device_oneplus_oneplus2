@@ -4,9 +4,9 @@
     "target_path": "device/oppo/common"
   },
   {
-    "repository": "LineageOS/android_kernel_oneplus_msm8994",
+    "repository": "unused-variable/android_kernel_oneplus_msm8994",
     "target_path": "kernel/oneplus/msm8994",
-    "branch": "lineage-17.1"
+    "branch": "croquette-release"
   },
   {
     "repository": "vendor_oneplus_oneplus2",
