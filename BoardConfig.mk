@@ -182,6 +182,9 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# Compile libhwui in performance mode 
+HWUI_COMPILE_FOR_PERF := true
+
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
