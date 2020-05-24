@@ -9,6 +9,11 @@
     "branch": "croquette-release"
   },
   {
+    "repository": "mukul2259/ims_apk",
+    "target_path": "packages/apps/ims_apk",
+    "branch": "ims-ten"
+  },
+  {
     "repository": "vendor_oneplus_oneplus2",
     "target_path": "vendor/oneplus/oneplus2"
   }
